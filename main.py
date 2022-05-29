@@ -7,8 +7,8 @@ import xlrd
 text_file = open("output.txt", 'a')
 text_file.write("\n\n")
 
-
-workbook = xlrd.open_workbook('C:\\Users\\SHIBL NASSER\\Downloads\\linkedin.xls')
+path = ""       #path location
+workbook = xlrd.open_workbook(path + "\\linked.xls")
 worksheet = workbook.sheet_by_name('Sheet1')
 
 
@@ -18,7 +18,7 @@ driver.get("https://www.linkedin.com/login")
 
 time.sleep(1)
 
-driver.find_element_by_xpath('/html/body/div/main/div[2]/div[1]/form/div[1]/input').send_keys('emial@gmail.com')
+driver.find_element_by_xpath('/html/body/div/main/div[2]/div[1]/form/div[1]/input').send_keys('email@gmail.com')
 driver.find_element_by_xpath('/html/body/div/main/div[2]/div[1]/form/div[2]/input').send_keys('Password')
 driver.find_element_by_xpath('/html/body/div/main/div[2]/div[1]/form/div[3]/button').click()
 
